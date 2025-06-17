@@ -1,3 +1,4 @@
-/workspace/ChatServer/build/CMakeFiles/server.dir
-/workspace/ChatServer/build/CMakeFiles/edit_cache.dir
-/workspace/ChatServer/build/CMakeFiles/rebuild_cache.dir
+/home/yihuofan/workspace/ChatServer/build/CMakeFiles/rebuild_cache.dir
+/home/yihuofan/workspace/ChatServer/build/CMakeFiles/edit_cache.dir
+/home/yihuofan/workspace/ChatServer/build/src/CMakeFiles/rebuild_cache.dir
+/home/yihuofan/workspace/ChatServer/build/src/CMakeFiles/edit_cache.dir
