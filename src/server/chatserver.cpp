@@ -16,7 +16,6 @@ ChatServer::ChatServer(EventLoop *loop,
 {
     // 注册链接回调
     _server.setConnectionCallback(std::bind(&ChatServer::onConnection, this, _1));
-
     // 注册消息回调
     _server.setMessageCallback(std::bind(&ChatServer::onMessage, this, _1, _2, _3));
 
@@ -35,6 +34,7 @@ void ChatServer::onConnection(const TcpConnectionPtr &conn)
 {
     if(!conn->connected())//
     {
+        ChatService::instance()->clientCloseException(conn); // 业务模块处理异常
         conn->shutdown();
     }
     else
