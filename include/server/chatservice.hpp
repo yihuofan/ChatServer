@@ -26,6 +26,8 @@ public:
     void login(const TcpConnectionPtr &conn, json &js, Timestamp time);
     // 处理注册业务
     void reg(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    //获取消息对应处理器
+    MsgHandler getHandler(int msgid);
 
 private:
     ChatService();
