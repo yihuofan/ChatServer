@@ -9,6 +9,7 @@
 #include "offlinemessagemodel.hpp"
 #include "friendmodel.hpp"
 #include "groupmodel.hpp"
+#include "redis.hpp"
 using namespace std;
 using namespace muduo;
 using namespace muduo::net;
@@ -48,6 +49,8 @@ public:
     MsgHandler getHandler(int msgid);
     // 处理客户端异常退出
     void clientCloseException(const TcpConnectionPtr &conn);
+    // 从redis消息队列中获取订阅的消息
+    void handleRedisSubscribeMessage(int, string);
 
 private:
     ChatService();
@@ -65,6 +68,8 @@ private:
     OfflineMsgModel _offlineMsgModel;   
     FriendModel _friendModel;
     GroupModel _groupModel;
+    // redis对象
+    Redis _redis;
 };
 
 #endif
